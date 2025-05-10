@@ -18,5 +18,13 @@ echo -n 'KEYMAP=hu
 FONT=lat2-16
 FONT_MAP=8859-2' > /etc/vconsole.conf
 
+echo -n 'homedevice' > /etc/hostname
+
+echo '127.0.0.1  localhost
+::1        localhost ip6-localhost ip6-loopback
+ff02::1    ip6-allnodes
+ff02::2    ip6-allrouters
+127.0.1.1  homedevice' >> /etc/hosts
+
 pacman -S networkmanager wpa_supplicant wireless_tools dialog
 systemctl enable NetworkManager.service
